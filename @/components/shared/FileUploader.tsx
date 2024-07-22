@@ -35,7 +35,7 @@ export default function FileUploader({fieldChange , mediaUrl} : FileUploaderProp
                 </>
             ):(
                 <div className='file_uploader-box'>
-                    <img src="/assets/icons/file-upload.svg" alt="file upload" />
+                    <img src="/SnapGram/assets/icons/file-upload.svg" alt="file upload" />
                     <h3 className='base-medium text-light-2 mb-2 mt-6'>Drag Photo here</h3>
                     <p className='text-light-3 small-regular mb-6'>SVG, PNG, JPG</p>
                     <Button type='button' className='shad-button_dark_4'>

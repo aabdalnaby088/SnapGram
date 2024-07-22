@@ -24,13 +24,13 @@ export default function SignupForm() {
 
 const navigate = useNavigate()
 const {toast} = useToast() 
-const {checkAuthUser , isLoading : isUserLoading} = useUserContext()
+const {checkAuthUser } = useUserContext()
 //mutateAsync is the mutationFn in the createUserAccountNutation function 
 
 const {mutateAsync:createUserAccount , isPending : isCreatingUser} = useCreateUserAccount()
 
 
-const {mutateAsync:signInAccount , isPending: isSigningIn} = useSignInAccount()
+const {mutateAsync:signInAccount } = useSignInAccount()
 
   // 1. Define your form.
     const form = useForm<z.infer<typeof signUpValidation>>({

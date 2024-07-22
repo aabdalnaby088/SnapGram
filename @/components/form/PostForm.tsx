@@ -70,7 +70,6 @@ async function onSubmit(values: z.infer<typeof createPostValidation>) {
         
 
 if (values && action == 'Create'){
-        console.log(post , action );
         const newPost = await createPost({
             userId: user.id,
             ...values

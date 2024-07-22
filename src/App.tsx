@@ -19,27 +19,28 @@ import AllUsers from './_root/pages/AllUsers'
 export default function App() {
     return (
 <main className='flex h-screen'>
-    <Routes>
-        {/* {PUBLIC ROUTES} */}
-        <Route element= {<AuthLayout/>}>
-            <Route path='/sign-in' element={<SigninForm/>} />
-            <Route path='/sign-up' element={<SignupForm/>} />
-        </Route>
-        {/* {Private ROUTES} */}
-        <Route element = {<RootLayout/>}>
-        <Route index element = {<Home/>} />
-        <Route path='/explore' element = {<Explore/>} />
-        <Route path='/saved' element = {<Saved/>} />
-        <Route path='/liked-posts' element = {<LikedPosts/>} />
-        <Route path='/create-post' element = {<CreatePost/>} />
-        <Route path='/update-post/:id' element = {<EditPost/>} />
-        <Route path='/posts/:id' element = {<PostDetails/>} />
-        <Route path='/Profile/:id/*' element = {<Profile/>} />
-        <Route path='/update-Profile/:id' element = {<UpdateProfile/>} />
-        <Route path='/all-users' element = {<AllUsers/>} />
+<Routes>
+  {/* {PUBLIC ROUTES} */}
+    <Route element={<AuthLayout />}>
+        <Route path="/sign-in" element={<SigninForm />} />
+        <Route path="/sign-up" element={<SignupForm />} />
+    </Route>
 
-        </Route>
-    </Routes>
+    {/* {Private ROUTES} */}
+    <Route element={<RootLayout />}>
+        <Route index element={<Home />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/saved" element={<Saved />} />
+        <Route path="/liked-posts" element={<LikedPosts />} />
+        <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/update-post/:id" element={<EditPost />} />
+        <Route path="/posts/:id" element={<PostDetails />} />
+        <Route path="/Profile/:id/*" element={<Profile />} />
+        <Route path="/update-Profile/:id" element={<UpdateProfile />} />
+        <Route path="/all-users" element={<AllUsers />} />
+        <Route path="*" element={<Home />} />
+    </Route>
+</Routes>
 
         <Toaster/>
 

@@ -9,6 +9,7 @@ type GridPostListProps = {
     showStats? : boolean;
 };
 export default function GridPostList({posts  , showUser = true,showStats = true,} : GridPostListProps) {
+const IMAGE_PREFEX = import.meta.env.VITE_IMAGE_PREFEX;
 
 const {user} = useUserContext()
 
@@ -26,7 +27,7 @@ const {user} = useUserContext()
                     <img
                     src={
                         post?.creator.imageUrl ||
-                        "/assets/icons/profile-placeholder.svg"
+                        `${IMAGE_PREFEX}/assets/icons/profile-placeholder.svg`
                     }
                     alt="creator"
                     className="w-8 h-8 rounded-full"

@@ -17,7 +17,7 @@ export default function PostDetails() {
         navigate(-1);
     };
 
-    const {data: userPosts , isPending:isLoadingRelatedPosts } = useGetUserPosts(post?.creator.$id)
+    const {data: userPosts  } = useGetUserPosts(post?.creator.$id)
 
     const relatedPosts = userPosts?.documents.filter((userPost)=> userPost.$id !== id)
     
@@ -25,7 +25,7 @@ export default function PostDetails() {
 <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Snapgram | Post Details {post?.$id}</title>
+                <title>Snapgram | Post Details </title>
             </Helmet>
         <div className="post_details-container">
             {isPending ? <Loader/> : (
@@ -54,10 +54,10 @@ export default function PostDetails() {
                     </Link>
                     <div className="flex-center gap-2">
                         <Link to={`/update-post/${post?.$id}`} className = {`${user.id != post?.creator.$id && 'hidden'}`}>
-                        <img src="/assets/icons/edit.svg" height={24} width={24} alt="edit" />
+                        <img src="/SnapGram/assets/icons/edit.svg" height={24} width={24} alt="edit" />
                         </Link>
                         <button type="button" onClick={handleDeletePost} className = {`${user.id != post?.creator.$id && 'hidden'}`}  >
-                                <img src="/assets/icons/delete.svg" height={24} width={24} alt=""  />
+                                <img src={`/SnapGram/assets/icons/delete.svg`} height={24} width={24} alt=""  />
                         </button>
                     </div>
                     </div>

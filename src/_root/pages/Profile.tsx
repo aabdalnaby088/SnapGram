@@ -29,7 +29,7 @@ import {Helmet} from "react-helmet";
         <div className="profile-inner_container">
             <div className="flex xl:flex-row flex-col gap-7">
             <img
-                src={currentUser.imageUrl || "/assets/icons/profile-placeholder.svg"}
+                src={currentUser.imageUrl || "/SnapGram/assets/icons/profile-placeholder.svg"}
                 alt="user profile picture"
                 width={80}
                 height={80}
@@ -44,7 +44,7 @@ import {Helmet} from "react-helmet";
                 </div>
                 {user.id === currentUser.$id && (
                 <Link to={`/update-profile/${currentUser.$id}`} className="h-8 bg-dark-4 px-4 text-light-1 flex-center gap-2 rounded-lg">
-                    <img src="/assets/icons/edit.svg" alt="edit" width={20} height={20} />
+                    <img src="/SnapGram/assets/icons/edit.svg" alt="edit" width={20} height={20} />
                     <p className="small-regular text-light-3">Edit profile</p>
                 </Link>
                 )}

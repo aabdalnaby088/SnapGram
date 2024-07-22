@@ -86,7 +86,7 @@ export default function UpdateProfile() {
     <div className="common-container">
     <div className="flex justify-start items-center w-full gap-4">
             <img
-            src="/assets/icons/edit.svg"
+            src="/SnapGram/assets/icons/edit.svg"
             width={36}
             height={36}
             alt="edit"

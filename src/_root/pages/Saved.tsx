@@ -26,7 +26,7 @@ const {data : currentUser} = useGetCurrentUser()
         </Helmet>
         <div className="saved-container">
             <div className="flex w-full max-w-5xl gap-3">
-                <img src="/assets/icons/save.svg" alt="save"
+                <img src="/SnapGram/assets/icons/save.svg" alt="save"
                 width={36}
                 height={36}
                 className="invert-white"
