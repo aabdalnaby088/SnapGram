@@ -12,5 +12,5 @@ import { QueryProvider } from '../@/lib/react-query/QueryProvider.tsx'
         </AuthProvider>
         </QueryProvider>
         </BrowserRouter>
-
     )
+
