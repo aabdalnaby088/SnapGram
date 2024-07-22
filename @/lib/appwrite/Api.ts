@@ -368,26 +368,26 @@ try {
 }
 
 
-export async function getInfinitePosts({pageParam} : {pageParam:number}){
-    const queries : any[] = [Query.orderDesc('$updatedAt') , Query.limit(5)]
-    
-    if (pageParam){
-        queries.push(Query.cursorAfter(pageParam.toString()))
+export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
+    const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(9)];
+
+    if (pageParam) {
+        queries.push(Query.cursorAfter(pageParam.toString()));
     }
 
-try {
-    const posts = await databases.listDocuments(
+    try {
+        const posts = await databases.listDocuments(
         appwriteConfig.databaseId,
         appwriteConfig.postCollectionId,
         queries
-    )
-    if(!posts) throw Error
-    return posts
-} catch (error) {
-    console.log(error);
-    
-}
+        );
 
+        if (!posts) throw Error;
+
+        return posts;
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
@@ -469,7 +469,7 @@ export async function updateProfile(user: IUpdateUser){
             const uploadedFile = await uploadFile(user.file[0])
             if(!uploadFile) throw Error
             
-    const fileUrl = getFilePreview(uploadedFile?.$id||"");
+    const fileUrl = await getFilePreview(uploadedFile?.$id||"");
         if (!fileUrl) {
             await deleteFile(uploadedFile?.$id||"");
             throw Error;
