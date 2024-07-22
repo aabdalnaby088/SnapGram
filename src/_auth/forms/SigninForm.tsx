@@ -21,7 +21,7 @@ export default function SigninForm() {
 const navigate = useNavigate()
 const {toast} = useToast() 
 
-const {checkAuthUser , isLoading : isUserLoading} = useUserContext()
+const {checkAuthUser } = useUserContext()
 
 //mutateAsync is the mutationFn in the createUserAccountNutation function 
 

@@ -16,7 +16,7 @@ export default function ProfileUploader({ fieldChange ,  imageUrl }: ProfileUplo
             setFile(acceptedFiles)
             fieldChange(acceptedFiles)
             setFileUrl(convertFileToUrl(acceptedFiles[0]))
-    }, [])
+    }, [file])
 
     const {getRootProps, getInputProps} = useDropzone({onDrop})
 

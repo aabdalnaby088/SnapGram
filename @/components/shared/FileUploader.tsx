@@ -15,7 +15,7 @@ export default function FileUploader({fieldChange , mediaUrl} : FileUploaderProp
         setFile(acceptedFiles);
         fieldChange(acceptedFiles)
         setFileUrl(URL.createObjectURL(acceptedFiles[0]))
-    }, [])
+    }, [file])
         const {getRootProps, getInputProps} = useDropzone({onDrop , 
             accept:{
                 'image/*':['.png' , '.jpg' , '.gif' , '.jpeg']
