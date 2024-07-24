@@ -42,6 +42,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
     const checkAuthUser = async () => {
         try {
             const currentAccount = await getCurrentAccount() ; 
+            
             if(currentAccount){
                 setUser({
                     id : currentAccount.$id ,

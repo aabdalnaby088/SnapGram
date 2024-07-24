@@ -5,8 +5,9 @@ import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "../../../@/types/i
 import { account, appwriteConfig, avatars, databases, storage } from "./config";
 
 export async function createUserAccount(user: INewUser){
-
 try{
+    console.log(user);
+
     
     const newAccount = await account.create(
         ID.unique(),
@@ -18,7 +19,6 @@ try{
     if(!newAccount){
         throw Error;
     }
-    console.log(newAccount);
 
     const avatarUrl = avatars.getInitials(user.name);
 
@@ -65,6 +65,9 @@ export async function signInAccount(user : {email : string; password : string}){
     try {
     // const activeSession = await account.getSession('current');
     // await account.deleteSession(activeSession.$id);
+    
+    console.log(user);
+    
         const session = await account.createEmailPasswordSession(user.email , user.password);
         console.log(session);
         return session;
@@ -77,6 +80,9 @@ export async function signInAccount(user : {email : string; password : string}){
 export async function getCurrentAccount() {
     try {
         const currentAccount = await account.get() ; 
+        
+        console.log(currentAccount);
+        
         if(!currentAccount){
             throw Error
         }
@@ -88,6 +94,7 @@ export async function getCurrentAccount() {
     }
     return currentUser.documents[0]
     } catch (error) {
+        
         console.log(error);
         
     }
