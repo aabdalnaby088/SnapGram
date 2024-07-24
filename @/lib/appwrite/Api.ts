@@ -63,8 +63,8 @@ try {
 
 export async function signInAccount(user : {email : string; password : string}){
     try {
-    // const activeSession = await account.getSession('current');
-    // await account.deleteSession(activeSession.$id);
+    const activeSession = await account.getSession('current');
+    await account.deleteSession(activeSession.$id);
     
     console.log(user);
     
@@ -76,27 +76,33 @@ export async function signInAccount(user : {email : string; password : string}){
         
     }
 }
+    export async function getAccount() {
+    try {
+        const currentAccount = await account.get();
 
+        return currentAccount;
+    } catch (error) {
+        console.log(error);
+    }
+    }
 export async function getCurrentAccount() {
     try {
-        const currentAccount = await account.get() ; 
-        
-        console.log(currentAccount);
-        
-        if(!currentAccount){
-            throw Error
-        }
-        const currentUser = await databases.listDocuments(appwriteConfig.databaseId , appwriteConfig.userCollectionId ,
-            [Query.equal('accountId' , currentAccount.$id)])
+        const currentAccount = await getAccount();
 
-    if(!currentUser){
-        throw Error
-    }
-    return currentUser.documents[0]
+        if (!currentAccount) throw Error;
+
+        const currentUser = await databases.listDocuments(
+        appwriteConfig.databaseId,
+        appwriteConfig.userCollectionId,
+        [Query.equal("accountId", currentAccount.$id)]
+        );
+
+        if (!currentUser) throw Error;
+
+        return currentUser.documents[0];
     } catch (error) {
-        
         console.log(error);
-        
+        return null;
     }
 }
 
