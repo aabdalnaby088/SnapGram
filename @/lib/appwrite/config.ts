@@ -14,9 +14,8 @@ export const appwriteConfig = {
 
 export const client = new Client()
 
-client.setEndpoint(appwriteConfig.url);
-client.setEndpointRealtime(appwriteConfig.url)
-client.setProject(appwriteConfig.projectId)
+client.setEndpoint(appwriteConfig.url).setProject(appwriteConfig.projectId);
+
 
 console.log(client.config.endpointRealtime);
 
