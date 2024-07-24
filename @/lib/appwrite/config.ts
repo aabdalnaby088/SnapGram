@@ -15,14 +15,13 @@ export const appwriteConfig = {
 export const client = new Client()
 
 client.setEndpoint(appwriteConfig.url);
+client.setEndpointRealtime(appwriteConfig.url)
 client.setProject(appwriteConfig.projectId)
 
-
-console.log(client.config.endpoint);
+console.log(client.config.endpointRealtime);
 
 
 export const account = new Account(client)
 export const databases = new Databases(client)
 export const storage = new Storage(client)
 export const avatars = new Avatars(client)
-
