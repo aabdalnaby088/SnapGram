@@ -17,7 +17,6 @@ useEffect(()=>{
         navigate(0)
     }
 },[isSuccess])
-const IMAGE_PREFEX = import.meta.env.VITE_IMAGE_PREFEX;
 
     return (
         <section className="topbar">

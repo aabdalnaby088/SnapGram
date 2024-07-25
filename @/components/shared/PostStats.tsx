@@ -62,7 +62,6 @@ if(savedPostRecord){
 }
 
 }
-const IMAGE_PREFEX = import.meta.env.VITE_IMAGE_PREFEX;
 
     return (
         <div className="flex justify-between items-center z-20">

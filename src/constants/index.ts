@@ -1,6 +1,4 @@
     
-    const IMAGE_PREFEX = import.meta.env.VITE_IMAGE_PREFEX;
-
     export const sidebarLinks = [
     {
         imgURL: `/SnapGram//assets/icons/home.svg`,
