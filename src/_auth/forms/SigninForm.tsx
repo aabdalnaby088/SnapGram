@@ -15,6 +15,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useToast } from "../../../@/components/ui/use-toast"
 import { useSignInAccount } from "../../../@/lib/react-query/queriesAndMutations.ts"
 import { useUserContext } from '../../context/AuthContext.tsx';
+import {Helmet} from "react-helmet";
 
 export default function SigninForm() {
 
@@ -64,6 +65,10 @@ const {mutateAsync:signInAccount , isPending: isSigningIn} = useSignInAccount()
 
     return (
 <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Snapgram | SignIn</title>
+            </Helmet>
     <Form {...form}>
 
     <div className="sm:w-420  flex-center flex-col ">
