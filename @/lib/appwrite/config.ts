@@ -17,7 +17,7 @@ export const appwriteConfig = {
     storageId : '668f0a4f0038e07a368e',
     userCollectionId : '668f0b51001891ba79ca',
     postCollectionId : '668f0b1900112863cf69',
-    savesCollectionId : '668f0b51001891ba79ca'
+    savesCollectionId : '668f0b7200211999e087'
 }
 
 

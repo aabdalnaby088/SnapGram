@@ -63,10 +63,11 @@ try {
 
 export async function signInAccount(user : {email : string; password : string}){
     try {
-    const activeSession = await account.getSession('current');
-    await account.deleteSession(activeSession.$id);
+        
+    // const activeSession = await account.getSession('current');
+    // if(activeSession)
+    // await account.deleteSession(activeSession.$id);
     
-    console.log(user);
     
         const session = await account.createEmailPasswordSession(user.email , user.password);
         console.log(session);
@@ -243,6 +244,7 @@ export async function likePost(postId:string , likesArray: string[]){
 
 export async function savePost(userId: string, postId: string) {
     try {
+        
         const updatedPost = await databases.createDocument(
         appwriteConfig.databaseId,
         appwriteConfig.savesCollectionId,

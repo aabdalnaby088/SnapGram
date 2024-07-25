@@ -19,7 +19,7 @@ export default function PostCard({ post }: postCardProps) {
                 <div className='flex items-center gap-3'>
                     <Link to={`/profile/${post.creator.$id}`}>
                         <img 
-                            src={post?.creator?.imageUrl || `${IMAGE_PREFEX}/assets/images/profile.png`} 
+                            src={post?.creator?.imageUrl || `/SnapGram//assets/images/profile.png`} 
                             alt="profile pic" 
                             className='w-12 lg:h-12 rounded-full' 
                         />
@@ -41,7 +41,7 @@ export default function PostCard({ post }: postCardProps) {
                     </div>
                 </div>
                 <Link to={`update-post/${post.$id}`} className={`${user.id !== post.creator.$id && "hidden"}`}>
-                    <img src={`${IMAGE_PREFEX}/assets/icons/edit.svg`} alt="edit" width={20} height={20} />
+                    <img src={`/SnapGram/assets/icons/edit.svg`} alt="edit" width={20} height={20} />
                 </Link>
             </div>
             <Link to={`/posts/${post.$id}`}>
@@ -56,7 +56,7 @@ export default function PostCard({ post }: postCardProps) {
                     </ul>
                 </div>
                 <img 
-                    src={post?.imageUrl || `${IMAGE_PREFEX}/assets/icons/posts.svg`} 
+                    src={post?.imageUrl || `/SnapGram/assets/icons/posts.svg`} 
                     alt="post image"  
                     className='post-card_img' 
                 />
