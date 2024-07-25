@@ -14,7 +14,7 @@ export default function PostDetails() {
     const { mutate: deletePost } = useDeletePost();
     const handleDeletePost = () => {
         deletePost({ postId: id || "", imageId: post?.imageId });
-        navigate(-1);
+        navigate('/');
     };
 
     const {data: userPosts  } = useGetUserPosts(post?.creator.$id)
@@ -56,7 +56,7 @@ export default function PostDetails() {
                         <Link to={`/update-post/${post?.$id}`} className = {`${user.id != post?.creator.$id && 'hidden'}`}>
                         <img src="/SnapGram/assets/icons/edit.svg" height={24} width={24} alt="edit" />
                         </Link>
-                        <button type="button" onClick={handleDeletePost} className = {`${user.id != post?.creator.$id && 'hidden'}`}  >
+                        <button  onClick={handleDeletePost} className = {`${user.id != post?.creator.$id && 'hidden'}`}  >
                                 <img src={`/SnapGram/assets/icons/delete.svg`} height={24} width={24} alt=""  />
                         </button>
                     </div>
@@ -78,8 +78,14 @@ export default function PostDetails() {
                 </div>
             </div>
             )}
-
-    <GridPostList posts = {relatedPosts} showUser = {false} showStats = {false} />
+{relatedPosts && relatedPosts.length > 0 ? (
+    <>
+        <h3 className="body-bold md:h3-bold w-full my-10 text-white">
+            More Related Posts
+        </h3>
+        <GridPostList posts={relatedPosts} showUser={false} showStats={false} />
+    </>
+) : <h3 className="body-bold md:h3-bold w-full my-10 text-white">No related posts</h3>}
 
         </div>
 </>
